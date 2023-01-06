@@ -31,49 +31,92 @@ body{
   position: relative;
   float: left;
   color: white;
+  margin-left: 10%;
+}
+.hydranet1{
+  margin-top: 10px;
+}
+.p-4{
+  margin-left: 10%;
+  margin-top: 15px;
+  margin-right: 10%;
 }
 .hdxlogo{
   position: relative;
   float: left;
   height: 45px;
   width: 45px;
-  margin-top: 4px;
   margin-left: 6px;
+  margin-top: -7px;
 }
 .Navbar{
   float: left;
   width: 100%;
-  background-color: #020730;
-  height: 55px;
+  background-color: #04092e;
+  height: 60px;
   color:azure;
-  padding: 5px;
   margin-top: 5px;
 }
 .nav{
   position: relative;
   float: left;
   margin-left: 20px;
-  font-size:20px;
   font-size: 15px;
+  width: 220px;
+  height: 100px;
   }
+.inputnav{
+  margin-left: 13px;
+  margin-right: -3px;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  text-decoration: none;
+  color: rgb(147, 149, 198);
+  height: 20px;
+  width: 220px;
+}
+.inputhome{
+  width: 450px;
+  height: 35px;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.734);
+  border: 1px solid rgb(255, 255, 255);
+  text-decoration: none;
+  color: rgb(147, 149, 198);
+
+}
+.inputbutton{
+  position: relative;
+  margin: auto;
+  margin-top: 30px;
+}
+.buttonhome{
+  cursor: pointer;
+  background-color: rgb(33, 68, 182);
+  height: 44px;
+  margin-left: 5px;
+  border-radius: 6px;
+  color: wheat;
+}
 .navs{
-  height: 300px;
+  height: 100px;
   width: 100%;
   
 }
 .navnumber{
   position: absolute;
   float: bottom;
-  margin-top: 30px;
-  margin-left: 20px;
+  margin-top: 15px;
+  margin-left: 75px;
   color: rgb(192, 255, 255);
-  
 }
 .navtext{
   position: relative;
   float: top;
   font-size: 20px;
   color: rgb(1, 183, 183);
+  margin-top: 10px;
 }
 .btn-primary{
   font-size: 20px;
@@ -82,8 +125,11 @@ body{
   margin-right: 6%;
   margin-top: 4px;
 }
-
 .tabs{
+  float: right;
+  margin-right: 10%;
+}
+.tab{
   padding: 5px;
   border: none;
   background-color: rgb(24, 93, 145);
@@ -104,7 +150,10 @@ body{
   color: white;
   position: relative;
   margin: auto;
-  padding-top: 90px;
+  padding-top: 120px;
+}
+.prevnext{
+  float: right;
 }
 
 
@@ -113,11 +162,13 @@ body{
 
 
 
-.bodyhdx{
+.bodyhdx,.bodyhdx1{
   display: block;
   float: left;
-  height: 1500px;
   margin-top: 10px;
+}
+.bodyhdx1{
+  margin-left: 8px;
 }
 .bodyshdx{
   display: none;
@@ -135,13 +186,17 @@ body{
   float: left;
   height: 40px;
   background-color: rgb(15, 15, 45);
+  width: 100%;
 }
 body{
   background-color: rgb(15, 15, 45);
 }
-.Txhash{
+.Txhash,.Txhashhome{
   float: left;
-  width: 300px;
+  width: 250px;
+}
+.Txhashhome{
+  width: 200px;
 }
 .line{
   width: 100%;
@@ -150,7 +205,17 @@ body{
   background-color: rgb(15, 15, 45);
   color: rgba(255, 255, 255, 0.832);
 }
-.line1{
+.linehome,.linehome1,.linehometx{
+  width: 100%;
+  float: left;
+  height: 35px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.832);
+}
+.linehome1{
+  height: 48px;
+}
+.line1,.line1home{
   float: left;
   height: 28px;
   background-color: rgb(15, 15, 45);
@@ -158,41 +223,79 @@ body{
   margin-bottom: 5px;
   color: rgb(237, 159, 159);
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
-.address, .amount,.order{
+.line1home{
+  background-color: transparent;
+  margin-top: 25px;
+  margin-left: 5px;
+  width: 95%;
+}
+.address,.addresshome,.addresshome1, .amount,.amount1home,.order,.orderhome,.addressa{
   float: left;
   width: 200px;
 
 }
-.DateTime{
+.DateTime,.DateTimehome,.DateTime2{
   float: left;
-  width: 150px;
+  width: 120px;
 }
-.order{
-  width: 20px;
+.DateTimehome{
+  width: 100px;
+}
+.DateTime2{
+  width: 100px;
+}
+.order,.orderhome{
+  width: 30px;
 }
 .address{
+  width: 200px;
+  margin-left: 10px;
+}
+.addressa{
   width: 400px;
-
+}
+.addresshome,.addresshome1{
+  width: 350px
+}
+.addresshome1{
+  width: 200px;
+  margin-top: 5px;
 }
 .amount{
   float: left;
   text-align: right;
   width: 125px;
+  margin-right: 0px;
 }
-.amount1{
+.amount1,.amount1home{
   float: left;
   text-align: right;
   width: 150px;
   margin-right: 10px;
   margin-left: 35px;
 }
+.amount1home{
+  float: right;
+    margin-right: 50px;
+}
+.amount1home1{
+  float: left;
+  width: 200px;
+  margin-top: 5px;
+}
 .amount1t{
   float: left;
   text-align: right;
   width: 180px;
   margin-right: 10px;
+}
+.BlockNohome{
+  float: left;
+}
+.BlockNohome{
+  width:180px;
 }
 .sort{
   cursor: pointer;
@@ -207,16 +310,17 @@ body{
   float: left;
   color: white;
   padding: 3px;
-  font-size: 16px;
+  font-size: 18px;
 }
 .inputhome{
   width: 450px;
   height: 35px;
   border-radius: 7px;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.643);
+  background-color: rgba(255, 255, 255, 0.734);
+  border: 1px solid rgb(255, 255, 255);
   text-decoration: none;
-  color: white;
+  color: rgb(147, 149, 198);
+
 }
 .inputbutton{
   position: relative;
@@ -226,10 +330,55 @@ body{
 .buttonhome{
   cursor: pointer;
   background-color: rgb(33, 68, 182);
-  height: 35px;
+  height: 44px;
   margin-left: 5px;
   border-radius: 6px;
   color: wheat;
+}
+.buttonnav{
+  cursor: pointer;
+  background-color: rgb(33, 68, 182);
+  height: 32px;
+  margin-left: 5px;
+  border-radius: 6px;
+  color: wheat;
+}
+.buttonnav:hover {background-color: #124de1}
+
+
+.tab:hover {background-color: #124de1}
+.sort:hover {background-color: #124de1}
+
+
+.latesttx{
+  float: left;
+  width: 40%;
+  height: 550px;
+  background-color: rgb(9, 4, 36);
+  margin-left: 10%;
+  border-radius: 13px;
+  margin-top: 30px;
+}
+.homeaddreses{
+  float: left;
+  width: 40%;
+  height: 550px;
+  background-color: rgb(9, 4, 36);
+  margin-left: 30px;
+  border-radius: 13px;
+  margin-top: 30px;
+}
+.infos{
+  width: 82%;
+  border-radius: 13px;
+  margin-left: 10%;
+  margin-top: 50px;
+  height: 100px;
+  background-color: rgb(9, 4, 36);
+}
+
+.linehometx{
+
 }
 
 /* @media screen and (max-width: 900px){

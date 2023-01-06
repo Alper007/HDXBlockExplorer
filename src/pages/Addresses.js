@@ -60,31 +60,35 @@ const func = async ()=>{
         <div className='sort1'>
           <button className='sort' onClick={()=>{setCoin("GHDX");setPage(1)}}>GHDX</button>
         </div>
+        <div className='prevnext'>
+          <div style={{float:"left"}}>
+        <button className='sort' onClick={()=>{if(page==1)return; setPage(page-1)}} >
+          PREV
+        </button>
+      </div>
+      <div style={{float:"left"}}>
+        <button className='sort' onClick={()=>{setPage(page+1)}}>
+          NEXT
+        </button>
+      </div>
+        </div>
+        
       </div>
         <div className="line1">
           <div className="order">RANK</div>
-          <div className="address">ADDRESS</div>
+          <div className="addressa">ADDRESS</div>
           <div className="amount1t">HDX+SHDX+(GHDX*1.42)</div>
           <div className="amount">SHDX</div>
           <div className="amount">HDX</div>
           <div className="amount">GHDX</div>
       </div>
-      <div style={{float:"left"}}>
-        <button className='tabs' onClick={()=>{if(page==1)return; setPage(page-1)}} >
-          PREV
-        </button>
-      </div>
-      <div style={{float:"left"}}>
-        <button className='tabs' onClick={()=>{setPage(page+1)}}>
-          NEXT
-        </button>
-      </div>
+
       <div className='bodyhdx' id='bodyhdx' >
       {
         addresss.map((element,i)=>(
           <div  className='line' key={i}>
             <div className="order">{(page -1 ) * 100 + (i+1)}</div>
-            <div className='address'>
+            <div className='addressa'>
             <Link to={`/Address/${element.address}`}>{(element.address).toString()}</Link>
             </div>
             <div className='amount1'>{comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2)) == 0 ? "0" : comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2))}</div>

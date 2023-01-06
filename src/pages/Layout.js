@@ -22,26 +22,27 @@ const Layout = () => {
     <>
     <div className="App">
        <div className='Navbar' >
-            <a className='hydranet' href='/'>
-              <div >HYDRANET </div>
-            </a>
-        <img className='hdxlogo'src='https://i.hizliresim.com/ocna173.png'/>
-        <p className='bigtitle'></p>
-        <div className=''>
-            <a className='tabs' href='/'>
+        <div className='hydranet1'>
+          <a className='hydranet' href='/'>
+            HYDRANET 
+          </a>
+          <img className='hdxlogo'src='https://i.hizliresim.com/ocna173.png'/>
+        </div>
+        <div className='tabs'>
+            <a className='tab' href='/'>
               HOME
             </a>
-            <a className='tabs' href='/Addresses'>
+            <a className='tab' href='/Addresses'>
             ADDRESSES
             </a>
-            <a className='tabs' href='/Transactions'>
+            <a className='tab' href='/Transactions'>
             TRANSACTIONS
             </a>
-            <a className='tabs' href='/Blocks'>
+            <a className='tab' href='/Blocks'>
             BLOCKS
             </a>
-          <input placeholder='Address,Block,Transaction' value={value} onChange={(e)=>setValue(e.target.value.trim())}></input>
-          <button onClick={()=>search(value)}>SEARCH </button>
+          <input className='inputnav' placeholder='Address,Block,Transaction' value={value} onChange={(e)=>setValue(e.target.value.trim())}></input>
+          <button className='buttonnav' onClick={()=>search(value)}>SEARCH </button>
         </div>
       </div>
       <Outlet />
