@@ -30,31 +30,39 @@ export default function AddressComp(){
     }
   return (
     <>
-      <div className="line1">
-        <div className="order">RANK</div>
-        <div className="address">ADDRESS</div>
-        <div className="amount1t">HDX+SHDX+(GHDX*1.42)</div>
-        <div className="amount">SHDX</div>
-        <div className="amount">HDX</div>
-        <div className="amount">GHDX</div>
+    <div className='p-4' style={{float:"left"}}>
+       <div className="line1">
+          <div className="addressa">ADDRESS</div>
+          <div className="amount1t">HDX+SHDX+(GHDX*1.42)</div>
+          <div className="amount">SHDX</div>
+          <div className="amount">HDX</div>
+          <div className="amount">GHDX</div>
       </div>
-    <div>
-       {
+
+      <div className='bodyhdx' id='bodyhdx' >
+      {
         arr.map((element,i)=>(
           <div  className='line' key={i}>
-          <div className="order">{(params.page -1) * 100 + (i+1)}</div>
-          <div className='address'>
-          <a href={`/Address/${element.address}`}>{(element.address).toString()}</a>
+            <div className='addressa'>
+            <Link to={`/Address/${element.address}`}>{(element.address).toString()}</Link>
+            </div>
+            <div className='amount1'>{comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2)) == 0 ? "0" : comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2))}</div>
+            <div className='amount'>{comma(Number(element.shdx).toFixed(2)) == 0 ? "0" : comma(Number(element.shdx).toFixed(2))}</div>
+            <div className='amount'>{comma(Number(element.hdx).toFixed(2)) == 0 ? "0" : comma(Number(element.hdx).toFixed(2))}</div>
+            <div className='amount'>{comma(Number(element.ghdx).toFixed(2)) == 0 ? "0" : comma(Number(element.ghdx).toFixed(2))}</div>
           </div>
-          <div className='amount1'>{comma(Number(element.all).toFixed(2)) === "" ? "0" : comma(Number(element.all).toFixed(2))}</div>
-          <div className='amount'>{comma(Number(element.shdx).toFixed(2)) === "" ? "0" : comma(Number(element.shdx).toFixed(2))}</div>
-          <div className='amount'>{comma(Number(element.hdx).toFixed(2)) === "" ? "0" : comma(Number(element.hdx).toFixed(2))}</div>
-          <div className='amount'>{comma(Number(element.ghdx).toFixed(2)) === "" ? "0" : comma(Number(element.ghdx).toFixed(2))}</div>
-        </div>
         ))
-      } 
-    </div>
-    <div  style={{marginTop:"30px", float:"left"}}>
+      }
+      </div>
+    <div  style={{marginTop:"50px", float:"left"}}>
+    <div className="line1">
+            <div className="amount">BlockNo</div>
+            <div className="Txhash">Txhash</div>
+            <div className="DateTime">DateTime</div>
+            <div className="address">From</div>
+            <div className="amount">Quantity</div>
+            <div className="address">To</div>
+          </div>
     {
       txss.map((element,i)=>(
         <div  className='line' key={i}>
@@ -67,17 +75,17 @@ export default function AddressComp(){
               </div>
              <div className='DateTime'>{((element.DateTime).toString().slice( 0 , 10 ))}</div>
              <a href={`/Address/${element.From}`}>
-              <div className='address'>{(element.From).toString() }</div>
+              <div className='address'> {(element.From).toString().substr(0,11) +"....." +(element.From).toString().substr(-11,11)}</div>
               </a>
              <div className='amount'>{(element.Quantity).toFixed(2)}</div>
              <a href={`/Address/${element.To}`}>
-              <div className='address'>{(element.To).toString() }</div>
+              <div className='address'> {(element.To).toString().substr(0,11) +"....." +(element.To).toString().substr(-11,11)}</div>
               </a>
            </div>
       ))
     }
     </div>
-      
+    </div>
     </>
   )
 }

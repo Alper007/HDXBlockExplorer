@@ -62,7 +62,7 @@ body{
   float: left;
   margin-left: 20px;
   font-size: 15px;
-  width: 220px;
+  width: 17%;
   height: 100px;
   }
 .inputnav{
@@ -76,16 +76,7 @@ body{
   height: 20px;
   width: 220px;
 }
-.inputhome{
-  width: 450px;
-  height: 35px;
-  border-radius: 7px;
-  background-color: rgba(255, 255, 255, 0.734);
-  border: 1px solid rgb(255, 255, 255);
-  text-decoration: none;
-  color: rgb(147, 149, 198);
 
-}
 .inputbutton{
   position: relative;
   margin: auto;
@@ -105,18 +96,13 @@ body{
   
 }
 .navnumber{
-  position: absolute;
-  float: bottom;
   margin-top: 15px;
-  margin-left: 75px;
   color: rgb(192, 255, 255);
 }
 .navtext{
-  position: relative;
-  float: top;
   font-size: 20px;
   color: rgb(1, 183, 183);
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .btn-primary{
   font-size: 20px;
@@ -165,7 +151,7 @@ body{
 .bodyhdx,.bodyhdx1{
   display: block;
   float: left;
-  margin-top: 10px;
+  width: 100%;
 }
 .bodyhdx1{
   margin-left: 8px;
@@ -230,6 +216,7 @@ body{
   margin-top: 25px;
   margin-left: 5px;
   width: 95%;
+  margin-bottom: 20px;
 }
 .address,.addresshome,.addresshome1, .amount,.amount1home,.order,.orderhome,.addressa{
   float: left;
@@ -244,7 +231,7 @@ body{
   width: 100px;
 }
 .DateTime2{
-  width: 100px;
+  width: 15%;
 }
 .order,.orderhome{
   width: 30px;
@@ -266,7 +253,7 @@ body{
 .amount{
   float: left;
   text-align: right;
-  width: 125px;
+  width: 12%;
   margin-right: 0px;
 }
 .amount1,.amount1home{
@@ -313,13 +300,13 @@ body{
   font-size: 18px;
 }
 .inputhome{
-  width: 450px;
+  width: 500px;
   height: 35px;
   border-radius: 7px;
   background-color: rgba(255, 255, 255, 0.734);
   border: 1px solid rgb(255, 255, 255);
   text-decoration: none;
-  color: rgb(147, 149, 198);
+  color: rgb(6, 0, 0);
 
 }
 .inputbutton{

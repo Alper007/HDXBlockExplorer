@@ -27,37 +27,41 @@ export default function TxComp(){
     }
     return (
       <div className='p-4'>
-       <div className="line1">
-         <div className="amount">BlockNo</div>
-         <div className="Txhash">Txhash</div>
-         <div className="DateTime">DateTime</div>
-         <div className="address">From</div>
-         <div className="amount">Quantity</div>
-         <div className="address">To</div>
-     </div>
-     <div className='bodyhdx' id='bodyhdx' >
-     {
-       txss.map((element,i)=>(
-        <div  className='line' key={i}>
+      <div className="line1">
+            <div className="amount">BlockNo</div>
+            <div className="Txhash">Txhash</div>
+            <div className="DateTime">DateTime</div>
+            <div className="address">From</div>
+            <div className="amount">Quantity</div>
+            <div className="address">To</div>
+          </div>
+       
 
-        <Link to={`/Blocks/${element.BlockNo}`}>
-         <div className='amount'>{(element.BlockNo).toString()}</div>
-         </Link>
-        <div className='Txhash'>
-         <Link to={`/Transaction/${element.Txhash}`}>{(element.Txhash).toString().substr(0,9) +"....." +(element.Txhash).toString().substr(-9,9)}</Link>
-         </div>
-        <div className='DateTime'>{((element.DateTime).toString().slice( 0 , 10 ))}</div>
-        <Link to={`/Address/${element.From}`}>
-         <div className='address'>{(element.From).toString() }</div>
-         </Link>
-        <div className='amount'>{(element.Quantity).toFixed(2)}</div>
-        <Link to={`/Address/${element.To}`}>
-         <div className='address'>{(element.To).toString() }</div>
-         </Link>
-      </div>
-       ))
-     }
+       {
+         txss.map((element,i)=>(
+           <div  className='line' key={i}>
+             <Link to={`/Blocks/${element.BlockNo}`}>
+              <div className='amount'>{(element.BlockNo).toString()}</div>
+              </Link>
+             <div className='Txhash'>
+              <Link to={`/Transaction/${element.Txhash}`}>
+                {(element.Txhash).toString().substr(0,9) +"....." +(element.Txhash).toString().substr(-9,9)}</Link>
+              </div>
+             <div className='DateTime'>{((element.DateTime).toString().slice( 0 , 10 ))}</div>
+             <Link to={`/Address/${element.From}`}>
+              <div className='address'>
+              {(element.From).toString().substr(0,11) +"....." +(element.From).toString().substr(-11,11)}
+              </div>
+              </Link>
+             <div className='amount'>{(element.Quantity).toFixed(2)}</div>
+             <Link to={`/Address/${element.To}`}>
+           
+              <div className='address'>  
+              {(element.To).toString().substr(0,11) +"....." +(element.To).toString().substr(-11,11)}</div>
+              </Link>
+           </div>
+         ))
+       }
      </div>
-   </div>
   )
 }
