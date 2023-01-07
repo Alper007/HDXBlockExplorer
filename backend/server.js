@@ -42,7 +42,7 @@ var _GhdxToken = new web3.eth.Contract(GHDX_ABI, GADDRESS);
 
 var tarih = new Date();
 
-async function add(){
+function add(){
 _HdxToken.events.Transfer()
     .on('data', (m) => {
   	const transa = new transactions(
@@ -54,6 +54,7 @@ _HdxToken.events.Transfer()
 				To: m.returnValues.to.toLowerCase(),
 				Quantity: m.returnValues.value/Math.pow(10,9)
 			})
+			console.log(transa)
       transa.save()
 
 		Allmap.findOne({address:m.returnValues.to.toLowerCase()},(err,data)=>{
@@ -63,7 +64,6 @@ _HdxToken.events.Transfer()
 				}
 				data.hdx = (Number(data.hdx) + Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
 				data.save()
-				console.log(data)
 			}
 		})
 		Allmap.findOne({address:m.returnValues.from.toLowerCase()},(err,data)=>{
@@ -73,7 +73,6 @@ _HdxToken.events.Transfer()
 				}
 				data.hdx = (Number(data.hdx) - Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
 				data.save()
-				console.log(data)
 			}
 		})
 	})
@@ -86,7 +85,6 @@ _HdxToken.events.Transfer()
 				}
 				data.shdx = (Number(data.shdx) + Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
 				data.save()
-				console.log(data)
 			}
 		})
 		Allmap.findOne({address:m.returnValues.from.toLowerCase()},(err,data)=>{
@@ -96,7 +94,6 @@ _HdxToken.events.Transfer()
 				}
 				data.shdx = (Number(data.shdx) - Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
 				data.save()
-				console.log(data)
 			}
 		})
 	})
@@ -109,7 +106,6 @@ _HdxToken.events.Transfer()
 				}
 				data.ghdx = (Number(data.ghdx) + Number(m.returnValues.value/Math.pow(10,18))).toFixed(0)
 				data.save()
-				console.log(data)
 			}
 		})
 		Allmap.findOne({address:m.returnValues.from.toLowerCase()},(err,data)=>{
@@ -119,7 +115,6 @@ _HdxToken.events.Transfer()
 				}
 				data.ghdx = (Number(data.ghdx) - Number(m.returnValues.value/Math.pow(10,18))).toFixed(0)
 				data.save()
-				console.log(data)
 			}
 		})
 	})
