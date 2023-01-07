@@ -101,6 +101,7 @@ const Anasayfa = () => {
             </a>
         </div>
         <div className="line1home">
+            <div className="orderhome">RANK</div>
             <div className="DateTime2">BlockNo</div>
             <div className="DateTime2">Txhash</div>
             <div className="DateTime2">DateTime</div>
@@ -153,7 +154,7 @@ const Anasayfa = () => {
             <div className='addresshome'>
             <Link to={`/Address/${element.address}`}>{(element.address).toString()}</Link>
             </div>
-            <div className='amount1home'>{comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2)) == 0 ? "0" : comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2))}</div>
+            <div className=''>{comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2)) == 0 ? "0" : comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2))}</div>
            
           </div>
         ))
