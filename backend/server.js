@@ -42,81 +42,83 @@ var _GhdxToken = new web3.eth.Contract(GHDX_ABI, GADDRESS);
 
 var tarih = new Date();
 
-function add(){
-_HdxToken.events.Transfer()
-    .on('data', (m) => {
-  	const transa = new transactions(
-			{
-				Txhash : m.transactionHash,
-				BlockNo : m.blockNumber,
-				DateTime: tarih,
-				From: m.returnValues.from.toLowerCase(),
-				To: m.returnValues.to.toLowerCase(),
-				Quantity: m.returnValues.value/Math.pow(10,9)
-			})
-			console.log(transa)
-      transa.save()
+async function add(){
 
-		Allmap.findOne({address:m.returnValues.to.toLowerCase()},(err,data)=>{
-			if(data){
-				if(err){
-					console.log(err)
-				}
-				data.hdx = (Number(data.hdx) + Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
-				data.save()
-			}
-		})
-		Allmap.findOne({address:m.returnValues.from.toLowerCase()},(err,data)=>{
-			if(data){
-				if(err){
-				console.log(err)
-				}
-				data.hdx = (Number(data.hdx) - Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
-				data.save()
-			}
-		})
-	})
-	_ShdxToken.events.Transfer()
-    .on('data', (m) => {
-		Allmap.findOne({address:m.returnValues.to.toLowerCase()},(err,data)=>{
-			if(data){
-				if(err){
-					console.log(err)
-				}
-				data.shdx = (Number(data.shdx) + Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
-				data.save()
-			}
-		})
-		Allmap.findOne({address:m.returnValues.from.toLowerCase()},(err,data)=>{
-			if(data){
-				if(err){
-				console.log(err)
-				}
-				data.shdx = (Number(data.shdx) - Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
-				data.save()
-			}
-		})
-	})
-	_GhdxToken.events.Transfer()
-    .on('data', (m) => {
-		Allmap.findOne({address:m.returnValues.to.toLowerCase()},(err,data)=>{
-			if(data){
-				if(err){
-					console.log(err)
-				}
-				data.ghdx = (Number(data.ghdx) + Number(m.returnValues.value/Math.pow(10,18))).toFixed(0)
-				data.save()
-			}
-		})
-		Allmap.findOne({address:m.returnValues.from.toLowerCase()},(err,data)=>{
-			if(data){
-				if(err){
-				console.log(err)
-				}
-				data.ghdx = (Number(data.ghdx) - Number(m.returnValues.value/Math.pow(10,18))).toFixed(0)
-				data.save()
-			}
-		})
-	})
+	Allmap.find().then((s)=>console.log(s))
+// _HdxToken.events.Transfer()
+//     .on('data', (m) => {
+//   	const transa = new transactions(
+// 			{
+// 				Txhash : m.transactionHash,
+// 				BlockNo : m.blockNumber,
+// 				DateTime: tarih,
+// 				From: m.returnValues.from.toLowerCase(),
+// 				To: m.returnValues.to.toLowerCase(),
+// 				Quantity: m.returnValues.value/Math.pow(10,9)
+// 			})
+// 			console.log(transa)
+//       transa.save()
+
+// 		Allmap.findOne({address:m.returnValues.to.toLowerCase()},(err,data)=>{
+// 			if(data){
+// 				if(err){
+// 					console.log(err)
+// 				}
+// 				data.hdx = (Number(data.hdx) + Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
+// 				data.save()
+// 			}
+// 		})
+// 		Allmap.findOne({address:m.returnValues.from.toLowerCase()},(err,data)=>{
+// 			if(data){
+// 				if(err){
+// 				console.log(err)
+// 				}
+// 				data.hdx = (Number(data.hdx) - Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
+// 				data.save()
+// 			}
+// 		})
+// 	})
+// 	_ShdxToken.events.Transfer()
+//     .on('data', (m) => {
+// 		Allmap.findOne({address:m.returnValues.to.toLowerCase()},(err,data)=>{
+// 			if(data){
+// 				if(err){
+// 					console.log(err)
+// 				}
+// 				data.shdx = (Number(data.shdx) + Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
+// 				data.save()
+// 			}
+// 		})
+// 		Allmap.findOne({address:m.returnValues.from.toLowerCase()},(err,data)=>{
+// 			if(data){
+// 				if(err){
+// 				console.log(err)
+// 				}
+// 				data.shdx = (Number(data.shdx) - Number(m.returnValues.value/Math.pow(10,9))).toFixed(0)
+// 				data.save()
+// 			}
+// 		})
+// 	})
+// 	_GhdxToken.events.Transfer()
+//     .on('data', (m) => {
+// 		Allmap.findOne({address:m.returnValues.to.toLowerCase()},(err,data)=>{
+// 			if(data){
+// 				if(err){
+// 					console.log(err)
+// 				}
+// 				data.ghdx = (Number(data.ghdx) + Number(m.returnValues.value/Math.pow(10,18))).toFixed(0)
+// 				data.save()
+// 			}
+// 		})
+// 		Allmap.findOne({address:m.returnValues.from.toLowerCase()},(err,data)=>{
+// 			if(data){
+// 				if(err){
+// 				console.log(err)
+// 				}
+// 				data.ghdx = (Number(data.ghdx) - Number(m.returnValues.value/Math.pow(10,18))).toFixed(0)
+// 				data.save()
+// 			}
+// 		})
+// 	})
 }
 add()

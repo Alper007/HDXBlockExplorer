@@ -91,7 +91,7 @@ const func = async ()=>{
             <div className='addressa'>
             <Link to={`/Address/${element.address}`}>{(element.address).toString()}</Link>
             </div>
-            <div className='amount1'>{comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2)) == 0 ? "0" : comma(((Number(element.hdx)+Number(element.shdx)+(Number(element.ghdx)*145/100))).toFixed(2))}</div>
+            <div className='amount1'>{comma(Number(element.all).toFixed(2))== 0 ? "0" : comma(Number(element.all).toFixed(2))}</div>
             <div className='amount'>{comma(Number(element.shdx).toFixed(2)) == 0 ? "0" : comma(Number(element.shdx).toFixed(2))}</div>
             <div className='amount'>{comma(Number(element.hdx).toFixed(2)) == 0 ? "0" : comma(Number(element.hdx).toFixed(2))}</div>
             <div className='amount'>{comma(Number(element.ghdx).toFixed(2)) == 0 ? "0" : comma(Number(element.ghdx).toFixed(2))}</div>
