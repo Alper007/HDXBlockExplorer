@@ -49,7 +49,7 @@ const func = async ()=>{
        <div className='body0' id='body0'>
         <div className='sort1'>SORT BY:</div>
         <div className='sort1'>
-          <button className='sort' onClick={()=>{setCoin("ALL");setPage(1)}}>HDX+SHDX+(GHDX*1.42)</button>
+          <button className='sort' onClick={()=>{setCoin("ALL");setPage(1)}}>HDX+SHDX+(GHDX*1.46)</button>
         </div>
         <div className='sort1'>
           <button className='sort' onClick={()=>{setCoin("SHDX");setPage(1)}}>SHDX</button>
