@@ -77,7 +77,7 @@ const func = async ()=>{
         <div className="line1">
           <div className="order">RANK</div>
           <div className="addressa">ADDRESS</div>
-          <div className="amount1t">HDX+SHDX+(GHDX*1.42)</div>
+          <div className="amount1t">HDX+SHDX+(GHDX*1.46)</div>
           <div className="amount">SHDX</div>
           <div className="amount">HDX</div>
           <div className="amount">GHDX</div>
